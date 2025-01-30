@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Main {
+
     public static void main(String[] args) {
         Account account = new Account();
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -19,6 +20,7 @@ public class Main {
         account.deposit(1000, date1);
         account.deposit(2000, date2);
         account.withdraw(500, date3);
+        
         account.printStatement();
     }
 }
