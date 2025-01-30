@@ -9,25 +9,28 @@ import java.util.List;
 
 public class Account implements AccountService{
 
-    //to store multiple transaction deposits / withdrawals.
+    //to store multiple transaction deposits / withdrawals
     List<Transaction> transactions = new ArrayList<>();
-
+    
+    //Original deposit method (from AccountService interface)
     @Override
     public void deposit(int amount) {
         transactions.add(new Transaction(amount, "deposit"));
     }
 
-
+    //Overloaded deposit method (accepts both amount and date)
     public void deposit(int amount,LocalDate date) {
         transactions.add(new Transaction(amount, "deposit",date));
     }
 
+    //Original withdraw method (from AccountService interface)
     @Override
     public void withdraw(int amount) {
         amount=-amount;
         transactions.add(new Transaction(amount, "withdraw"));
     }
 
+    //Overloaded withdraw method (accepts both amount and date)
     public void withdraw(int amount, LocalDate date) {
         amount=-amount;
         transactions.add(new Transaction(amount, "withdraw",date));
